@@ -6,15 +6,15 @@ pipeline {
                 git 'https://github.com/spring-projects/spring-petclinic'
             }
         }
-        stage('Build') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
+         stage('Build') {
+    steps {
+        sh 'npm install'
+    }
+}
+stage('Test') {
+    steps {
+        sh 'npm test'
+    }
+}
     }
 }

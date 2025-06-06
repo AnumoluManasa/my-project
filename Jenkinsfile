@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/spring-projects/spring-petclinic'
+                git 'https://github.com/AnumoluManasa/my-project.git'
             }
         }
-         stage('Build') {
-    steps {
-        sh 'npm install'
-    }
-}
-stage('Test') {
-    steps {
-        sh 'npm test'
-    }
-}
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
     }
 }
